@@ -65,6 +65,7 @@ function parseURLParameters() {
 
             var responseMap = JSON.parse(request.responseText);
 
+            responseMap.basePath = "http://120.27.129.174/asset/pano/"
             // Set JSON file location
             if (responseMap.basePath === undefined)
                 responseMap.basePath = configFromURL.config.substring(0, configFromURL.config.lastIndexOf('/')+1);
@@ -85,7 +86,9 @@ function parseURLParameters() {
             configFromURL.escapeHTML = true;
             viewer = pannellum.viewer('container', configFromURL);
         };
-        request.open('GET', configFromURL.config);
+        configURl = "http://120.27.129.174:8187/v1/a/pano/config/" + configFromURL.config
+        request.open('GET', configURl);
+        //request.open('GET', configFromURL.config);
         request.send();
         return;
     }

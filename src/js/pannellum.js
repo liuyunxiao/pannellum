@@ -98,7 +98,7 @@ var defaultConfig = {
     keyboardZoom: true,
     mouseZoom: true,
     showZoomCtrl: true,
-    autoLoad: false,
+    autoLoad: true,
     showControls: true,
     orientationOnByDefault: false,
     hotSpotDebug: false,
